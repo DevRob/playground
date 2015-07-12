@@ -22,7 +22,7 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
-/*
+
 window.onload = function() {
   var startPos;
   var geoOptions = {
@@ -44,4 +44,4 @@ window.onload = function() {
 
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
 };
-*/
+
