@@ -1,0 +1,75 @@
+/* ------------------- general style -------------------  */
+/* {
+   outline: 1px solid red !important;
+}*/
+#googleMap {
+  width: 300px;
+  height: 300px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* ------------------- style for semantic elements ------------------- */
+body {
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #666666;
+    background-color: #fff;
+}
+
+h1 {
+    height: 98px;
+    font-size: 48px;
+    text-align: center;
+    margin: 0 0 26px;
+    padding-top: 45px;
+}
+
+h2 {
+    margin: 0 0 32px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #F07C17;
+}
+
+p, ul {
+    font-size: 16px;
+    line-height: 200%;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+/* ------------------- class style ------------------- */
+.container {
+    max-width: 1024px;
+    max-height: 885px;
+}
+.row1 {
+    height: 128px;
+}
+
+.mug {
+    max-height: 380px;
+    max-width: 380px;
+}
+
+.features {
+    max-width: 380px;
+    margin-top: 30px;
+    padding: 30px;
+    padding-bottom: 24px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCCCCC;
+}
