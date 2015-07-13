@@ -5,7 +5,7 @@ canvas.style.height = window.innerHeight + 'px';
 
 function initialize() {
   var mapOptions = {
-    center:new google.maps.LatLng(52, -8),
+    center:new google.maps.LatLng(40, 73),
     zoom:5,
     mapTypeId:google.maps.MapTypeId.ROADMAP,
     minZoom: 3,
@@ -23,15 +23,15 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
-window.onload = function() {
+getloc = function() {
   var startPos;
   var geoOptions = {
      timeout: 10 * 1000
   }
 
   var geoSuccess = function(position) {
-    startPos = position;
-    alert("lat: " + startPos.coords.latitude, "Lan: " + startPos.coords.longitude);
+    var startPos = position;
+    document.getElementById("googleMap").mapOptions.center = new google.maps.LatLng(startPos.coords.latitude, longi = startPos.coords.longitude);
   };
   var geoError = function(error) {
     console.log('Error occurred. Error code: ' + error.code);
@@ -44,4 +44,3 @@ window.onload = function() {
 
   navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
 };
-
