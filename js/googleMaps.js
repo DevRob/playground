@@ -7,8 +7,8 @@ iMhere = function() {
   }
 
   var geoSuccess = function(position) {
-    function initialize() {
-      var pyrmont = new google.maps.LatLng(startPos.coords.latitude, startPos.coords.latitude);
+    function initialize(position) {
+      var pyrmont = new google.maps.LatLng(position.coords.latitude, position.coords.latitude);
 
       map = new google.maps.Map(document.getElementById('map-canvas'), {
         center: pyrmont,
