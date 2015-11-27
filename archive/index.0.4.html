@@ -1,0 +1,70 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Visitor Guide</title>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+
+    <div id="results" data-bind="visible: listBoolean">
+      <div class="list-title" data-bind="click: switchInfoBox"><img height="22px" style="margin-right: 30px" src="images/info.jpg"><h2>Popular Places</h2></div>
+          <ul class="infolist" data-bind="foreach: places">
+            <li data-bind="click: $root.clickMarker">
+            <hr>
+              <p><span class="place-name" data-bind="text: name"></span></p>
+              <p class="place-category"><span data-bind="text: types[0]"></span></p>
+              <p class="place-address"><span data-bind="text: vicinity"></span></p>
+              <p>
+                <span data-bind="if: $data.opening_hours">
+                  <span data-bind="if $data.opening_hours.open_now">
+                    <span style="color: #4b86b4; background-color: #adcbe3">This place is open.</span>
+                  </span>
+                </span>
+              </p>
+              <p>
+                <strong>Rating: </strong>
+                <span data-bind="if: $data.rating">
+                  <img data-bind="attr:{src: {getRateStar(rating)}"/>
+                </span>
+                <span data-bind="ifnot: $data.rating">
+                  <em>no rating available.</em>
+                </span>
+              </p>
+              <p>
+                <span data-bind="if: $data.photos">
+                  <img style="border-radius: 5px; box-shadow: 0px 0px 5px 5px rgba(118,146,180, 0.3)" data-bind="attr:{src: photos[0].getUrl({maxHeight: 200})}" />
+                </span>
+                <span data-bind="ifnot: $data.photos">
+                  <img style="border-radius: 5px; box-shadow: 0px 0px 5px 5px rgba(118,146,180, 0.3)" src="images/nophoto.jpg" />
+                </span>
+              </p>
+            </li>
+          </ul>
+          <button id="more" type="button" name="button">more</button>
+          </div>
+
+      <input id="search-bar" group="controls" placeholder="Search for places" style="display: none" type="text">
+      <!--input id="search-bar" group="controls" placeholder="Search for places" type="text"-->
+      <div id="btn-toolbar" class="btn-toolbar" group="controls" style="display: none">
+        <button id='hide' type="button" class="btn btn-default">
+          <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+        </button><br>
+        <div id="filters" class="btn-group" data-bind="foreach: icons" role="group" aria-label="plane">
+          <!--placeholder for filter buttons-->
+          <button class="btn-group">
+            <img width="25px" data-bind="attr: {src: icon}"/>
+          </button><br>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/JSmods/jquery-2.1.4.min.js"></script>
+    <script src="js/JSmods/knockout-3.3.0.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
